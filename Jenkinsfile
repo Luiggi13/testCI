@@ -5,7 +5,7 @@ pipeline {
       parallel {
         stage('commited') {
           steps {
-            mail(subject: 'Mail from jenkins', body: 'Ha funcionado', cc: 'christian.llansola@outlook.es', bcc: 'christian.llansola@gmail.com', from: 'christian.llansola@gmail.com', replyTo: 'christian.llansola@gmail.com', to: 'christian.llansola@gmail.com')
+            git(url: 'https://github.com/Luiggi13/testCI', branch: 'master', changelog: true, poll: true, credentialsId: 'Luiggi13')
           }
         }
         stage('fsd') {
